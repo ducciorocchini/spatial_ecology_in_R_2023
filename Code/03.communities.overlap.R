@@ -15,15 +15,25 @@ head(kerinci)
 # tiger
 # The unit of time is the day, so values range from 0 to 1. 
 # The package overlap works entirely in radians: fitting density curves uses trigonometric functions (sin, cos, tan),
-# so this speeds up simulations. The conversion is straightforward:
-timeRad <- kerinci$Time * 2 * pi
-timeRad
-tig <- timeRad[kerinci$Sps == 'tiger']
-densityPlot(tig, rug=TRUE)
+# so this speeds up simulations. The conversion is straightforward: kerinci$Time * 2 * pi
+kerinci$timeRad <- kerinci$Time * 2 * pi
 
-# overlap
-mac <- timeRad[kerinci$Sps == 'macaque']
-overlapPlot(tig, mac)
+# selecting the first species
+tiger <- kerinci[kerinci$Sps=="tiger",]
+
+# selecting the time for the tiger
+timetig <- tiger$timeRad
+densityPlot(timetig, rug=TRUE)
+
+# selecting the second species
+maca <- kerinci[kerinci$Sps=="macaque",]
+
+# selecting the time for the tiger
+timemaca <- maca$timeRad
+densityPlot(timemaca, rug=TRUE)
+
+# overlap!
+overlapPlot(timetig, timemaca)
 legend('topright', c("Tigers", "Macaques"), lty=c(1,2), col=c("black","blue"), bty='n')       
 
 # species
