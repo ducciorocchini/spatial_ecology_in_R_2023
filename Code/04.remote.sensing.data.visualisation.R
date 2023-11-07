@@ -66,3 +66,10 @@ plot(b8, col=cln)
 # band4 red element 3, stacksent[[3]]
 # band8 nir element 4, stacksent[[4]]
 im.plotRGB(stacksent, r=3, g=2, b=1)
+im.plotRGB(stacksent, r=4, g=3, b=2)
+im.plotRGB(stacksent, r=3, g=4, b=2)
+im.plotRGB(stacksent, r=3, g=2, b=4)
+
+
+pairs(stacksent)
+
