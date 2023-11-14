@@ -41,3 +41,14 @@ plot(g2015, col=clg)
 stackg <- c(g2000, g2005, g2010, g2015)
 plot(stackg, col=clg)
 
+# Exercise: make the differencxe between the first and the final elemnts of the stack
+difg <- stackg[[1]] - stackg[[4]]
+# difg <- g2000 - g2015
+plot(difg, col=cldif)
+
+# Exercise: make a RGB plot using different years
+im.plotRGB(stackg, r=1, g=2, b=3)
+
+
+
+
