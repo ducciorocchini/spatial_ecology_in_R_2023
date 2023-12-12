@@ -58,6 +58,12 @@ tabout <- data.frame(class, y1992, y2006)
 tabout
 
 # final output
-cover <- c("forest", "human")
-perc1992 <- c(83, 17)
-p1 <- ggplot(tabout, aes(x=cover, y=perc1992, color=cover)) + geom_bar(stat="identity", fill="white")
+p1 <- ggplot(tabout, aes(x=class, y=y1992, color=class)) + geom_bar(stat="identity", fill="white")
+p2 <- ggplot(tabout, aes(x=class, y=y2006, color=class)) + geom_bar(stat="identity", fill="white")
+p1 + p2
+
+# final output, rescaled
+p1 <- ggplot(tabout, aes(x=class, y=y1992, color=class)) + geom_bar(stat="identity", fill="white") + ylim(c(0,100))
+p2 <- ggplot(tabout, aes(x=class, y=y2006, color=class)) + geom_bar(stat="identity", fill="white") + ylim(c(0,100))
+p1 + p2
+
