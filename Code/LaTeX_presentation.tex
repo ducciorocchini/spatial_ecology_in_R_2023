@@ -1,0 +1,205 @@
+\documentclass{beamer}
+\usepackage{listings}
+% 
+\usetheme{Warsaw} % Frankfurt | Warsaw
+\usecolortheme{dove} %crane  dove dolphin beaver dove
+% % block styles
+\setbeamertemplate{blocks}[rounded][shadow=true]
+% 
+% plot(inputtable)
+
+\title{Choose your preferred title}
+ \subtitle{beamer}
+ \author{Duccio Rocchini, The PhD students}
+ \institute{
+ Alma Mater Studiorum UniBO\\
+ \bigskip
+ \includegraphics[width=0.3\textwidth]{satellite2.jpeg}
+ }
+
+\begin{document}
+\maketitle
+
+\AtBeginSection[] % Do nothing for \section*
+{
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\section{Introduction}
+
+\begin{frame}{My very first slide in LaTeX: hoorray!!}
+    \texttt{My first text here!!}
+\end{frame}
+
+\begin{frame}{My very first slide in LaTeX: hoorray!!}
+    \scriptsize{My first text here!!}
+\end{frame}
+
+\begin{frame}{My very first slide in LaTeX: hoorray!!}
+    \tiny{My first text here!!}
+\end{frame}
+
+
+
+\begin{frame}{My very first slide in LaTeX: hoorray!!}
+    My first text here!! \\
+    Here write the second sentence. \\
+    Third sentence here.
+\end{frame}
+
+
+\begin{frame}{My very first slide in LaTeX: hoorray!!}
+    My first text here!! \\
+    \bigskip
+    Here write the second sentence. \\
+    \bigskip
+    Third sentence here.
+\end{frame}
+
+\subsection{Itemizing}
+
+\begin{frame}
+ \frametitle{Itemizing}
+ \begin{itemize}
+  \item Remote sensing is a powerful tool
+  \item It can be used for diversity estimate
+  \item It can be used in ecological informatics
+ \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Itemizing}
+ \begin{itemize}
+  \item<1> Remote sensing is a powerful tool
+  \item<2> It can be used for diversity estimate
+  \item<3> It can be used in ecological informatics
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Itemizing}
+ \begin{itemize}
+  \item<1-> Remote sensing is a powerful tool
+  \item<2-> It can be used for diversity estimate
+  \item<3-> It can be used in ecological informatics
+ \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Itemizing}
+\begin{itemize}
+    \item first item
+    \item second item: I love ecology
+    \item I love Biol Geol Env Sci
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Itemizing}
+\begin{itemize}
+\tiny{
+    \item<1-> first item
+    \item<2-> second item: I love ecology
+    \item<3-> love Biol Geol Env Sci
+}
+\end{itemize}
+\end{frame}
+
+\section{Figures}
+\begin{frame}{Adding a figure}
+\centering
+ \includegraphics[width=0.9\textwidth]{satellite2.jpeg}
+\end{frame}
+
+\begin{frame}{Adding a figure}
+\centering
+ \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
+ \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
+\end{frame}
+
+\begin{frame}{Adding a figure}
+\centering
+ \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
+ \includegraphics[width=0.4\textwidth]{satellite2.jpeg}\\
+ \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
+  \includegraphics[width=0.4\textwidth]{satellite2.jpeg}\\
+\end{frame}
+
+\begin{frame}{Adding a figure}
+\centering
+ \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
+ \includegraphics[width=0.4\textwidth]{satellite2.jpeg}\\
+ \bigskip
+ \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
+  \includegraphics[width=0.4\textwidth]{satellite2.jpeg}\\
+\end{frame}
+
+
+\begin{frame}{Adding a figure}
+\centering
+ \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
+ \includegraphics[width=0.4\textwidth]{satellite2.jpeg}\\
+ \smallskip
+ \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
+  \includegraphics[width=0.4\textwidth]{satellite2.jpeg}\\
+\end{frame}
+
+\section{Formulas}
+
+
+\begin{frame}{Formulaaaaaaaas!}
+    \begin{equation}
+        H' = - \sum_{i=1}^{N} p_i \times \log{p_i}
+    \end{equation}
+\end{frame}
+
+\begin{frame}{More difficult formulas...}
+Let's experience the easiness of writing difficult formulas:
+\begin{equation}
+K_{\alpha}=\frac{1}{\left( \sum_{i=1}^{N} p_i \times p_i^{\alpha-1} \right)^{\frac{1}{\alpha-1}}} 
+\end{equation}
+\end{frame}
+
+
+\begin{frame}{Formulaaaaaaaas!}
+Bla bla bla I love formulas, especially into my sentences
+$H' = - \sum_{i=1}^{N} p_i \times \log{p_i}$ and blablabla again
+\end{frame}
+
+\begin{frame}{More info on formulas...}
+\url{https://en.wikibooks.org/wiki/LaTeX/Mathematics}
+\end{frame}
+
+\begin{frame}{Formulas that no other software can do!}
+    \begin{equation}
+    M_d=
+    \begin{pmatrix}
+    d_{\lambda_1,\lambda_1} & d_{\lambda_1,\lambda_2} & d_{\lambda_1,\lambda_3} & \cdots & d_{\lambda_1,\lambda_n} \\
+    d_{\lambda_2,\lambda_1} & d_{\lambda_2,\lambda_2} & d_{\lambda_2,\lambda_3} & \cdots & d_{\lambda_2,\lambda_n} \\
+    d_{\lambda_3,\lambda_1} & d_{\lambda_3,\lambda_2} & d_{\lambda_3,\lambda_3} & \cdots & d_{\lambda_3,\lambda_n} \\
+    \vdots  & \vdots  & \vdots  & \ddots & \vdots  \\
+    d_{\lambda_n,\lambda_1} & d_{\lambda_n,\lambda_2} & d_{\lambda_n,\lambda_3} & \cdots & d_{\lambda_n,\lambda_n}
+    \end{pmatrix}
+    \end{equation}
+\end{frame}
+
+\begin{frame}{The code!}
+    \lstinputlisting[language=R]{list2.r}
+\end{frame}
+
+\begin{frame}{The code!}
+    \lstinputlisting[language=R]{list2.r} \\
+    \bigskip
+    This is the function of R we are using, where:
+    \begin{itemize}
+        \item x = input file...
+        \item $\alpha$ = blablabla
+    \end{itemize}
+\end{frame}
+
+
+ \end{document}
