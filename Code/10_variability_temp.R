@@ -8,7 +8,7 @@ im.list()
 
 sent <- im.import("sentinel.png")
 
-im.plotRGB.user(sent, 1, 2, 3)
+im.plotRGB(sent, 1, 2, 3)
 
 nir <- sent[[1]]
 
