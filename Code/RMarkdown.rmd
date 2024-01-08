@@ -1,0 +1,24 @@
+---
+title: "test"
+author: "Duccio Rocchini"
+date: "2024-01-08"
+output: html_document
+---
+
+# RMarkDown file!
+
+```{r, eval=T}
+library(imageRy)
+```
+
+```{r, eval=T}
+im.list()
+```
+
+```{r, eval=T}
+mato2006 <-im.import("matogrosso_ast_2006209_lrg.jpg")
+```
+
+```{r, eval=T}
+im.plotRGB(mato2006, 2, 1, 3)
+```
