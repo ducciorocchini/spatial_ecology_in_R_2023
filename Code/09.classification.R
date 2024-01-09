@@ -3,6 +3,7 @@
 library(terra)
 library(imageRy)
 library(ggplot2)
+library(patchwork)
 
 im.list()
 
