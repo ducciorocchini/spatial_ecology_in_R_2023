@@ -19,5 +19,52 @@ In this case you do not:
 2 + 3
 ```
 
+Using proper packages; the imageRy package has been nuilt at Alma Mater for learning remote sensing:
+```{r, eval=T}
+library(imageRy)
+```
 
+Let's import tha data by listing them in imageRy:
+```{r, eval=T}
+im.list()
+```
+
+Importing the Mato grosso area image:
+```{r, eval=T}
+mato1992 <- im.import("matogrosso_l5_1992219_lrg.jpg")
+```
+
+Importing the Mato grosso area image without warnings:
+```{r, eval=T, warning=F}
+mato1992 <- im.import("matogrosso_l5_1992219_lrg.jpg")
+```
+
+Making a new plot of the Mato Grosso area with the NIR ontop of the green component of the RGB space:
+```{r, eval=T}
+im.plotRGB(mato1992, r=2, g=1, b=3)
+```
+
+Plotting several images altogether:
+```{r, eval=T}
+par(mfrow=c(2,2))
+im.plotRGB(mato1992, r=1, g=2, b=3)
+im.plotRGB(mato1992, r=2, g=1, b=3)
+im.plotRGB(mato1992, r=3, g=2, b=1)
+im.plotRGB(mato1992, r=1, g=3, b=1)
+```
+
+Calculating spectral indices:
+```{r, eval=T}
+library(terra)
+library(viridis)
+dvi <- mato1992[[1]]-mato1992[[2]]
+viridisc <- colorRampPalette(viridis(7))(255)
+plot(dvi, col=viridisc)
+```
+
+Calculating variability:
+```{r, eval=T}
+sd5 <- focal(mato1992[[1]], matrix(1/25, 5, 5), fun=sd)
+plot(sd5, col=viridisc)
+```
 
