@@ -26,6 +26,8 @@ plot(b3, col=cl)
 b4 <- im.import("sentinel.dolomites.b4.tif") 
 plot(b4, col=cl)
 
+*----
+
 # import the NIR band from Sentinel-2 (band 8)
 b8 <- im.import("sentinel.dolomites.b8.tif") 
 plot(b8, col=cl)
